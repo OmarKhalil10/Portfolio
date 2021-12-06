@@ -1,13 +1,12 @@
-from flask import Flask, request, abort, jsonify, render_template
+from flask import Flask, request, render_template
 from flask_cors import CORS
-from sqlalchemy import select
-
-from models import setup_db, Staff, Student, Courses, Data, student_courses, staff_courses, db
+import os
 
 def create_app(test_config=None):
-    # Create and configure the app 
-    app = Flask(__name__)
-    setup_db(app)
+    # Create and configure the app
+    template_dir = os.path.abspath('.')
+
+    app = Flask(__name__, template_folder=template_dir)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     # CORS Headers
@@ -20,7 +19,12 @@ def create_app(test_config=None):
     @app.route('/')
     def landing_page():
         return render_template('index.html')
-
+    @app.route('/services')
+    def get_services():
+        return render_template('/Services/Services.html')
+    @app.route('/learning')
+    def get_learning():
+        return render_template('/Learning/Learning.html')
 
     return app
 
