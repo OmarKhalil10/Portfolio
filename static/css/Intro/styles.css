@@ -40,7 +40,7 @@
 .atom {
     width: 30px;
     height: 30px;
-    margin: 0px 4px 12px auto;
+    margin: 0px 4px 10px auto;
 }
 @media screen and (max-width: 500px) {
     .logo-header {
@@ -49,5 +49,6 @@
     .atom {
         height: 15px;
         width: 15px;
+        margin: 0px 4px 5px auto;
     }
 }
