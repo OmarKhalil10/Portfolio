@@ -25,6 +25,9 @@ def create_app(test_config=None):
     @app.route('/learning')
     def get_learning():
         return render_template('/Learning/Learning.html')
+    @app.route('/resume')
+    def get_resume():
+        return render_template('/Resume/Resume.html')
 
     return app
 
