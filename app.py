@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-from flask_mail import Mail, Message
 from flask_cors import CORS
 import os
 
@@ -39,13 +38,6 @@ def create_app(test_config=None):
     @app.route('/resume')
     def get_resume():
         return render_template('/Resume/Resume.html')
-
-    @app.route('/send-message')
-    def send_message():
-        msg = Message('Hello', sender="johnaziz269@gmail.com", recipients=['johnaziz269@gmail.com'])
-        msg.body = "Hello Flask Message Mail."
-        mail.send(msg)
-        return "SENT"
 
     return app
 
