@@ -7,17 +7,7 @@ def create_app(test_config=None):
     template_dir = os.path.abspath('.')
 
     app = Flask(__name__, template_folder=template_dir)
-    mail = Mail(app)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
-    
-    app.config['MAIL_SERVER'] = 'smtp@gmail.com'
-    app.config['MAIL_PORT'] = 465
-    app.config['MAIL_USERNAME'] = 'johnaziz269@gmail.com'
-    app.config['MAIL_PASSWORD'] = "I love my life, i don't want to die."
-    app.config['MAIL_USE_TLS'] = False
-    app.config['MAIL_USE_SSL'] = True
-
-    mail = Mail(app)
 
     # CORS Headers
     @app.after_request
