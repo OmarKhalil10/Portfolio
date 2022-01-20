@@ -17,7 +17,7 @@ html {
 }
 .home{
     display: flex;
-    background: url("/static/img/bgsix.jpg") no-repeat center;
+    background: url("https://lh3.googleusercontent.com/pw/AM-JKLUHrmUyzeTbufSiVT_lH41VdMDpNpnkgAutbYWhBRqnTKOy0anOqQugAwqIbkUt0t11mEsW_EPcy4b32XkyPH2ccNZumUk0I1Akboc-S0zVLB9O_2NOAE-I5nKcsJp9wZQWZBCZCgWH-Ra8ISIpdvtJ=w1689-h950-no") no-repeat center;
     opacity: 1;
     height: 90vh;
     width: 100%;
