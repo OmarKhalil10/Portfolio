@@ -5,6 +5,7 @@ html {
 }
 body{
     margin: 0;
+    font-display: swap;
 }
 footer[data-v-429e21cc] {
     background: #141618;

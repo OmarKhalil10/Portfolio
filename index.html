@@ -1,26 +1,45 @@
 <!doctype html>
 <html data-n-head-ssr lang="en" data-n-head="lang">
-
 <head data-n-head="">
   <title data-n-head="true">Omar Khalil's Site</title>
   <meta data-n-head="true" charset="utf-8">
-  <meta data-n-head="true" name="viewport" content="width=device-width,initial-scale=1">
-  <meta data-n-head="true" data-hid="description" name="description" content="Omar Khalil's site">
+  <meta name="description" content="Personal Blog & Portfolio">
+  <meta name="author" content="Omar Khalil">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Developer, Engineer, and maker."/>
+  <link rel="canonical" href="https://omarkhalil.herokuapp.com"/>
+  <meta property="og:site_name" content="Omar Khalil">
+  <meta property="og:locale" content="en_IE"/>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@OmarKhalil0"/>
+  <meta name="twitter:creator" content="@OmarKhalil0"/>
+  <meta property="og:url" content="https://omarkhalil.herokuapp.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Omar Khalil" />
+  <meta property="og:description" content="Developer, Engineer, and maker." />
+  <meta property="og:image" content="/static/img/me.jpg" />
+  <meta property="og:image:alt" content="Omar Khalil" />
+  <meta property="og:image:width" content="720" />
+  <meta property="og:image:height" content="720" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link data-n-head="true" rel="icon" type="image/x-icon" href="/static/img/atom.jpg">
-  <link rel="shortcut icon" type="image/x-icon" href="/static/img/atom.JPG" />
+  <link data-n-head="true" rel="icon" type="image/x-icon" href="static/img/atom.jpg">
+  <link rel="shortcut icon" type="image/x-icon" href="/static/img/atom.jpg" />
   <a href="https://icons8.com/icon/5sap3pjmf5ky/code"></a>
   <link rel="stylesheet" href="/static/css/index/styles.css">
+  <link rel="stylesheet" href="/static/css/Intro/styles.css">
   <style
     data-vue-ssr-id="3baa03b4:0 17cfdfa9:0 aab9a468:0 34a29404:0 21d76a79:0 0349549d:0 76711e5d:0 17da4aa6:0 086a3383:0 302d029e:0 276bee7b:0 0675e136:0 7a823a01:0">
   </style>
 </head>
 <body>
-  <!--
+
+  <!-- Navbar
   <div class="nav">
     <input type="checkbox" id="nav-check">
     <div class="nav-header">
@@ -44,16 +63,32 @@
       <a href="/Learning/Learning.html" target="_blank">LEARNING RESOURCES</a>
       <a href="/Services/Services.html" target="_blank">Projects</a> 
     </div>
+  </div> 
+  -->
+
+  <!-- Intro -->
+  <div class="intro">
+    <h1 class="logo-header">
+      <span class="logo">Welcome</span>
+      <span></span> <!-- Space Between -->
+      <span class="logo">To</span>
+      <span></span> <!-- Space Between -->
+      <span class="logo">My</span>
+      <span></span> <!-- Space Between -->
+      <span class="logo">Website</span>
+      <span></span> <!-- Space Between -->
+      <span class="logo"><img class="atom" src="/static/img/atom.jpg" alt="Atom-Img"></span>
+    </h1>
   </div>
 
-  Navbar-->
+  <!-- NavBar -->
   <nav class="navbar navbar-expand-md navbar-dark pl-2" style="background-color: #212529;">
     <a class="navbar-brand" href="/" style="font-size: 25px;">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav pt-1">
         <li class="nav-item">
         <a class="nav-link active" href="/">Portfolio</a>
         </li>
@@ -62,6 +97,9 @@
         </li>
         <li class="nav-item">
         <a class="nav-link" href="/services">Services & Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/resume">Résumé</a>
         </li>    
     </ul>
     <hr class="text-white-50">
@@ -112,9 +150,9 @@
         <div class="home-content">
           <div class="text-1">Hello, my name is</div>
           <div class="text-2">Omar Khalil</div>
-          <div class="text-3">And I'm a <span class="typing"></span></div>
+          <div class="text-3"><span class="typing"></span></div>
           <a href="https://mail.google.com/mail/u/0/?fs=1&to=omar.khalil498@gmail.com&su=Hey&body=Hey%20I%20want%20hire%20you&tf=cm" target="_blank" style="text-decoration: none;">Hire me</a>
-        </div>
+        </div> 
       </div>
     </section>
     <!--
@@ -232,7 +270,7 @@
       </li>
     </ul>
     <hr data-v-429e21cc>
-    <p data-v-429e21cc>All materials © Omar Khalil 2021</p>
+    <p data-v-429e21cc>All materials © Omar Khalil</p>
     <div class="social-links" data-v-429e21cc>
       <a href="https://twitter.com/OmarKhalil0" name="twitter" target="_blank" data-v-429e21cc>
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32" aria-labelledby="twitter"
@@ -270,6 +308,7 @@
       loop: true
     });
   </script>
+  <script src="/static/js/Intro.js"></script>
 </body>
 
 </html>
