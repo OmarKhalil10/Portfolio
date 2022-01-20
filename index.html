@@ -213,7 +213,7 @@
       <div class="formarea" data-v-565688c0>
         <h2 data-v-565688c0>Say Hello</h2>
         <br data-v-565688c0>
-        <form name='contact' method='POST' action="#" data-v-565688c0>
+        <form name='contact' id="contact" data-v-565688c0>
           <input type='hidden' name='form-name' value='contact' />
           <p class="hidden" data-v-565688c0>
             <label data-v-565688c0>
@@ -221,11 +221,13 @@
               <input name="bot-field" data-v-565688c0>
             </label>
           </p>
+          <div id="alert-message">
+          </div>
           <p data-v-565688c0>
             <label for="name" data-v-565688c0>
               Name
               <br data-v-565688c0>
-              <input id="name" type="name" name="name" data-v-565688c0>
+              <input id="name" type="name" name="name" data-v-565688c0 required>
             </label>
           </p>
           <!-- -->
@@ -233,7 +235,7 @@
             <label for="email" data-v-565688c0>
               Email
               <br data-v-565688c0>
-              <input id="email" type="email" name="email" data-v-565688c0>
+              <input id="email" type="email" name="email" data-v-565688c0 required>
             </label>
           </p>
           <!---->
@@ -241,7 +243,7 @@
             <label for="message" data-v-565688c0>
               Message
               <br data-v-565688c0>
-              <textarea id="message" name="message" rows="4" data-v-565688c0></textarea>
+              <textarea id="message" name="message" rows="4" data-v-565688c0 required></textarea>
             </label>
           </p>
           <!---->
@@ -300,6 +302,43 @@
     </div>
   </footer>
   <script>
+    document.getElementById('contact').onsubmit = function(e){
+      e.preventDefault();
+      fetch('/send-message', {
+        method: 'POST', 
+        body: JSON.stringify({ 
+          'name': document.getElementById('name').value,
+          'email': document.getElementById('email').value,
+          'message': document.getElementById('message').value
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function(response){
+        return response.json();
+      }).then(function(jsonResponse){
+        if(jsonResponse['success']){
+          const alertMessage = document.getElementById('alert-message');
+          alertMessage.insertAdjacentHTML("afterbegin",`<div id="additional-message" class="alert alert-success alert-dismissible fade show hidden" role="alert">
+            <strong>Success!</strong> Your message was sent!
+        </div>`);
+        setTimeout(function(){
+          const additionalMessage = document.getElementById('additional-message');
+          additionalMessage.remove();
+        }, 2000)
+          document.contact.reset();
+        }
+      }).catch(function(){
+        const alertMessage = document.getElementById('alert-message');
+        alertMessage.insertAdjacentHTML("afterbegin",`<div id="additional-message" class="alert alert-danger alert-dismissible fade show hidden" role="alert">
+            <strong>Alert!</strong> Your message was not sent!
+        </div>`);
+        setTimeout(function(){
+          const additionalMessage = document.getElementById('additional-message');
+          additionalMessage.remove();
+        }, 2000)
+      });
+    }
     // typing text animation script
     var typed = new Typed(".typing", {
       strings: ["Computer Engineer", "Full Stack Developer", "Freelancer"],
