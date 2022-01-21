@@ -37,17 +37,8 @@
     opacity: 0;
     transition: ease-in-out 0.5s;
 }
-.atom {
-    width: 30px;
-    height: 30px;
-    margin: 0px 4px 5px auto;
-}
 @media screen and (max-width: 500px) {
     .logo-header {
        font-size: 0.95em;
-    }
-    .atom {
-        height: 15px;
-        width: 15px;
     }
 }
