@@ -18,6 +18,45 @@ body {
   margin: 0;
   padding: 0;
 }
+/* To Top Button Style */
+#button {
+  display: inline-block;
+  background-color: #007bff;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 footer[data-v-429e21cc] {
     background: #141618;
     position: relative;
@@ -649,7 +688,9 @@ a[data-v-5543664c],a[data-v-5543664c]:active,a[data-v-5543664c]:visited {
     .master-header {
       height: 100vh;
     }
-  
+    #button {
+      margin: 30px;
+    }
     .master-header__box {
       top: 70%;
       -webkit-transform: translate(-50%, -70%);
