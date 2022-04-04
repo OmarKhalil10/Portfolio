@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_mail import Mail, Message
 import os
 
-password = "uneahzmreaczjkln"
+password = os.environ.get('GMAIL_APP_PASSWORD')
 
 def create_app(test_config=None):
     # Create and configure the app
