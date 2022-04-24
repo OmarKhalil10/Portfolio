@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_mail import Mail, Message
 import os
 
-password = "uneahzmreaczjkln"
+password = os.environ.get('GMAIL_APP_PASSWORD')
 
 def create_app(test_config=None):
     # Create and configure the app
@@ -42,6 +42,10 @@ def create_app(test_config=None):
     @app.route('/resume')
     def get_resume():
         return render_template('/Resume/Resume.html')
+    @app.route('/projects')
+    def get_projects():
+        return render_template('/Projects/Projects.html')
+
 
     @app.route('/send-message', methods=['POST'])
     def send_message():
